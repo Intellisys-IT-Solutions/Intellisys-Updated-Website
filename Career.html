@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intellisys IT Solutions Private Limited</title>
+    <link rel="stylesheet" href="Career.css" />
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- Added Font Awesome -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script defer src="Career.js"></script>
+  </head>
+
+  <body class="overflow-x-hidden">
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo1.gif" alt="Intellisys Logo" width="150" />
+        </a>
+      </div>
+
+      <!-- Hamburger Menu Button -->
+      <div class="menu-card">
+        <button id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a> Services <i class="bi bi-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="webapp.html">Web Development</a>
+            <a href="mobileapp.html">Mobile App Development</a>
+            <a href="cloud.html">Cloud Solutions</a>
+            <a href="cyber.html">Cybersecurity</a>
+            <a href="uiux.html">UI/UX</a>
+          </div>
+        </div>
+        <a href="Technologies.html">Technology</a>
+        <a href="Career.html">Career</a>
+        <a href="About.html">About Us</a>
+        <a href="Contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Career Section -->
+    <section class="career-section bg-[rgb(216,196,186)] py-20">
+      <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold text-black mb-4">
+          Career at <span class="text-orange-500">Intellisys</span>
+        </h1>
+        <p class="text-lg text-black mb-8">
+          Check out our open positions or sign up to our newsletter to get
+          notified about opportunities to join the Intellisys team.
+        </p>
+        <div id="open-positions">
+          <button
+            class="bg-[#FC7F03] text-white px-8 py-3 rounded-full"
+            onclick="scrollToOpenPositions()"
+          >
+            All Open Positions
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <h1 class="main-heading">Hiring Models</h1>
+      <div class="cards-container">
+        <div class="card" id="card1">
+          <h2 class="card-heading">Singular Assets</h2>
+          <p class="card-description">
+            Hire individual experts with specialized skills to fill specific
+            roles or project requirements on a flexible basis.
+          </p>
+        </div>
+        <div class="card" id="card2">
+          <h2 class="card-heading">Committed Team</h2>
+          <p class="card-description">
+            A dedicated team of professionals works exclusively on your project,
+            ensuring long-term collaboration and efficiency.
+          </p>
+        </div>
+        <div class="card" id="card3">
+          <h2 class="card-heading">Role-Based Assets</h2>
+          <p class="card-description">
+            Augment your team with professionals tailored to specific roles such
+            as developers, testers, or project managers based on your business
+            needs.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container1">
+      <h1 class="main-heading1">Check Our Open Positions</h1>
+
+      <div class="search-row">
+        <div class="search-box">
+          <input type="text" id="job-role" placeholder="Search Job Role" />
+        </div>
+        <div class="search-box">
+          <input type="text" id="location" placeholder="Search Location" />
+        </div>
+      </div>
+    </div>
+
+    <div class="job-container">
+      <div class="job-card">
+        <div class="job-info">
+          <div>
+            <div class="job-title">Java Developer</div>
+            <div class="job-details">Experience: 1-2 years</div>
+            <div class="job-details">Location: Pune| No. of Posts: 10</div>
+            <div class="job-details">Posting Date: 20-01-2025</div>
+          </div>
+          <button class="apply-btn" onclick="openPopup('Java Developer')">
+            Apply Now
+          </button>
+        </div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <div>
+            <div class="job-title">Digital Marketing</div>
+            <div class="job-details">Experience: 0-1 years</div>
+            <div class="job-details">Location: Pune | No. of Posts: 10</div>
+            <div class="job-details">Posting Date: 20-01-2025</div>
+          </div>
+          <button class="apply-btn" onclick="openPopup('Digital Marketing')">
+            Apply Now
+          </button>
+        </div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <div>
+            <div class="job-title">Graphic Design</div>
+            <div class="job-details">Experience: 0-1 years</div>
+            <div class="job-details">Location: Pune | No. of Posts: 3</div>
+            <div class="job-details">Posting Date: 17-01-2025</div>
+          </div>
+          <button class="apply-btn" onclick="openPopup('Graphic Design')">
+            Apply Now
+          </button>
+        </div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <div>
+            <div class="job-title">HR</div>
+            <div class="job-details">Experience: 0-1 years</div>
+            <div class="job-details">Location: Pune | No. of Posts: 3</div>
+            <div class="job-details">Posting Date: 17-01-2025</div>
+          </div>
+          <button class="apply-btn" onclick="openPopup('HR')">Apply Now</button>
+        </div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <div>
+            <div class="job-title">Full Stack Trainer</div>
+            <div class="job-details">Experience: 1-3 years</div>
+            <div class="job-details">Location: Pune | No. of Posts: 5</div>
+            <div class="job-details">Posting Date: 17-01-2025</div>
+          </div>
+          <button class="apply-btn" onclick="openPopup('Full Stack Trainer')">
+            Apply Now
+          </button>
+        </div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <div>
+            <div class="job-title">Automation Tester</div>
+            <div class="job-details">Experience: 0-1 years</div>
+            <div class="job-details">Location: Pune | No. of Posts: 3</div>
+            <div class="job-details">Posting Date: 17-01-2025</div>
+          </div>
+          <button class="apply-btn" onclick="openPopup('Automation Tester')">
+            Apply Now
+          </button>
+        </div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <div>
+            <div class="job-title">Big Data Analytics</div>
+            <div class="job-details">Experience: 0-1 years</div>
+            <div class="job-details">Location: Pune | No. of Posts: 3</div>
+            <div class="job-details">Posting Date: 17-01-2025</div>
+          </div>
+          <button class="apply-btn" onclick="openPopup('Big Data Analytics')">
+            Apply Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Job Description Popup -->
+    <div id="job-popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2 id="job-title-popup"></h2>
+        <p id="job-description"></p>
+        <button class="apply-btn1" onclick="openFormPopup()">Apply Now</button>
+      </div>
+    </div>
+
+    <!-- Application Form Popup -->
+    <div id="form-popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closeFormPopup()">&times;</span>
+        <h2 class="Custom">Application Form</h2>
+        <hr />
+
+        <form id="application-form" onsubmit="submitForm(event)">
+          <!-- Position Field (Pre-filled from job title) -->
+          <div class="form-group">
+            <label for="position"><strong>Position</strong></label>
+            <input
+              type="text"
+              id="position"
+              name="position"
+              required
+              readonly
+            />
+          </div>
+
+          <!-- Name Field -->
+          <div class="form-group">
+            <label for="name"><strong>Name</strong></label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <!-- Address Field -->
+          <div class="form-group">
+            <label for="address"><strong>Address</strong></label>
+            <textarea id="address" name="address" required></textarea>
+          </div>
+
+          <!-- Country Dropdown -->
+          <div class="form-group">
+            <label for="country"><strong>Country</strong></label>
+            <input type="text" id="country" name="country" required />
+          </div>
+
+          <!-- State Field -->
+          <div class="form-group">
+            <label for="state"><strong>State</strong></label>
+            <input type="text" id="state" name="state" required />
+          </div>
+
+          <!-- City Field -->
+          <div class="form-group">
+            <label for="city"><strong>City</strong></label>
+            <input type="text" id="city" name="city" required />
+          </div>
+
+          <!-- Postal Code Field -->
+          <div class="form-group">
+            <label for="postalcode"><strong>Postal Code</strong></label>
+            <input type="text" id="postalcode" name="postalcode" required />
+          </div>
+
+          <!-- Contact Number Field -->
+          <div class="form-group">
+            <label for="contact"><strong>Contact Number</strong></label>
+            <input type="tel" id="contact" name="contact" required />
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="email"><strong>Email ID</strong></label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <!-- CV Upload Field -->
+          <div class="form-group">
+            <label for="cv"><strong>Upload CV</strong></label>
+            <input type="file" id="cv" name="cv" required />
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="apply-btn">Submit Application</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <!-- Left Section - Logo & Address -->
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img src="intellisys (2).png" alt="Company Logo" />
+          </div>
+          <h3 class="footer-title">Address</h3>
+          <p>
+            Gera Imperim Rise, 328-B, Wipro Circle,<br />
+            Opp. to Wipro Company, Hinjawadi Phase II,<br />
+            Hinjawadi Rajiv Gandhi Infotech Park,<br />
+            Pune, Maharashtra 411057
+          </p>
+        </div>
+
+        <!-- Middle Section - Quick Links -->
+        <div class="footer-column text-center">
+          <h3 class="footer-title">Quick Links</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="technologies.html">Technologies</a>
+            <a href="career.html">Career</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <!-- Right Section - Contact & Social -->
+        <div class="footer-column text-right">
+          <h3 class="footer-title">Contact Us</h3>
+          <div class="footer-contact">
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <strong>Phone:</strong> +91 91128 17771
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <strong>Email:</strong>
+              <a
+                href="mailto:info@intellisysitsolutions.com"
+                class="footer-email"
+              >
+                info@intellisysitsolutions.com
+              </a>
+            </div>
+          </div>
+          <h3 class="footer-title1">Follow Us</h3>
+          <div class="footer-social">
+            <a href="https://linkedin.com" target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://twitter.com" target="_blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>
+          © 2025 INTELLISYS IT Solutions Private Limited. All Rights Reserved
+        </p>
+        <p>
+          Designed by
+          <a href="https://www.intellisysitsolutions.com/" style="color: orange"
+            >Team INTELLISYS</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          duration: 1000,
+          once: true,
+        });
+
+        const menuButton = document.querySelector("nav button");
+        const menuItems = document.querySelector("nav div.hidden");
+
+        menuButton.addEventListener("click", () => {
+          menuItems.classList.toggle("hidden");
+          menuItems.classList.toggle("flex");
+          menuItems.classList.toggle("flex-col");
+          menuItems.classList.toggle("absolute");
+          menuItems.classList.toggle("top-16");
+          menuItems.classList.toggle("left-0");
+          menuItems.classList.toggle("w-full");
+          menuItems.classList.toggle("bg-black");
+          menuItems.classList.toggle("p-4");
+        });
+      });
+    </script>
+
+    <style>
+      /* Footer padding adjustments to keep the same space from the top and bottom */
+      footer {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      /* Quick Links hover effect */
+      .quick-links a {
+        text-decoration: none;
+        color: inherit; /* Default color */
+      }
+
+      .quick-links a:hover {
+        color: orange;
+      }
+
+      /* Styling for larger and bold headings */
+      .footer-heading {
+        font-size: 1.5rem; /* Larger font size */
+        font-weight: bold; /* Bold font */
+      }
+
+      /* Hover effect for Address section */
+      .address-hover:hover {
+        color: orange; /* Change color to orange on hover */
+      }
+
+      /* Hover effect for Quick Links section */
+      .quick-links-hover:hover {
+        color: orange; /* Change color to orange on hover */
+      }
+
+      /* Hover effect for Contact Us section */
+      .contact-us-hover:hover {
+        color: orange; /* Change color to orange on hover */
+      }
+
+      /* Hover effect for Opening Hours section */
+      .opening-hours-hover:hover {
+        color: orange; /* Change color to orange on hover */
+      }
+
+      /* Hover effect for Visit Us section */
+      .visit-us-hover:hover {
+        color: orange; /* Change color to orange on hover */
+      }
+
+      /* Social icons hover effect - Zoom-out with color change */
+      .social-icons a {
+        transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+      }
+
+      .social-icons a:hover {
+        transform: scale(0.9); /* Zoom out the icon */
+        color: orange; /* Change icon color to orange */
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          duration: 1000,
+          once: true,
+        });
+
+        const menuButton = document.querySelector("nav button");
+        const menuItems = document.querySelector("nav div.hidden");
+
+        menuButton.addEventListener("click", () => {
+          menuItems.classList.toggle("hidden");
+          menuItems.classList.toggle("flex");
+          menuItems.classList.toggle("flex-col");
+          menuItems.classList.toggle("absolute");
+          menuItems.classList.toggle("top-16");
+          menuItems.classList.toggle("left-0");
+          menuItems.classList.toggle("w-full");
+          menuItems.classList.toggle("bg-black");
+          menuItems.classList.toggle("p-4");
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
+        const serviceDropdown = document.querySelector(".dropdown > a");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        // Toggle Mobile Menu
+        menuToggle.addEventListener("click", function (event) {
+          navLinks.classList.toggle("active");
+        });
+
+        // Toggle Services Dropdown in Mobile View
+        serviceDropdown.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default link action
+          dropdownContent.classList.toggle("show");
+        });
+
+        // Close Menu When Clicking Outside
+        document.addEventListener("click", function (event) {
+          if (
+            !menuToggle.contains(event.target) &&
+            !navLinks.contains(event.target)
+          ) {
+            navLinks.classList.remove("active");
+            dropdownContent.classList.remove("show"); // Close dropdown too
+          }
+        });
+
+        // Close Menu When Clicking a Link
+        navLinks.querySelectorAll("a:not(.dropdown > a)").forEach((link) => {
+          link.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
