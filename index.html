@@ -1,0 +1,742 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intellisys IT Solutions Private Limited</title>
+    <link rel="stylesheet" href="Intellisys2.css" />
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="navbar.css" />
+  </head>
+
+  <body class="overflow-x-hidden">
+    <nav>
+      <div class="logo">
+        <img src="logo1.gif" alt="Intellisys Logo" width="150" />
+      </div>
+
+      <!-- Hamburger Menu Button -->
+    <div class="menu-card">
+        <button id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+      <!-- Navigation Links -->
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a>Services <i class="bi bi-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="webapp.html">Web Development</a>
+            <a href="mobileapp.html">Mobile App Development</a>
+            <a href="cloud.html">Cloud Solutions</a>
+            <a href="cyber.html">Cybersecurity</a>
+            <a href="uiux.html">UI/UX</a>
+          </div>
+        </div>
+        <a href="Technologies.html">Technology</a>
+        <a href="Career.html">Career</a>
+        <a href="About.html">About Us</a>
+        <a href="Contact.html">Contact</a>
+      </div>
+    </nav>
+
+   <section id="home" class="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+    <!-- Video Background -->
+    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover opacity-25">
+        <source src="bg2.mov" type="video/mp4">
+    </video>
+
+    <!-- Content Overlay -->
+    <div class="container mx-auto px-6 sm:px-10 relative z-10 text-center sm:text-left">
+        <div class="w-full max-w-2xl text-white" data-aos="fade-right">
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold mb-4 font-playfair leading-tight">
+                Your Vision Our
+                <div class="text-white sm:text-5xl md:text-6xl font-bold font-montserrat">
+                    Intelli<span class="custom-orange">sys</span>
+                </div>
+                <span class="block mt-1 sm:mt-3">Expertise in</span>
+                <span class="custom-orange text-3xl sm:text-5xl">Digital Reality</span>
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl mb-6 max-w-lg mx-auto sm:mx-0">
+                Innovative Solutions for Your Digital Journey
+            </p>
+        </div>
+    </div>
+</section>
+
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="intellisys-welcome-section">
+      <div id="intellisys-welcome-container">
+        <div id="intellisys-welcome-content">
+          <h1 id="intellisys-welcome-title">
+            Welcome to <span id="intellisys-highlight">Intellisys</span>
+            <br /><span id="intellisys-subtitle">IT Solutions</span>
+          </h1>
+          <p id="intellisys-description">
+            Welcome to Intellisys IT Solutions, where we specialize in
+            delivering comprehensive digital solutions. Our services include
+            full-stack development, offering complete web and mobile app
+            solutions from frontend design to backend architecture. We ensure
+            your software is market-ready through rigorous software testing for
+            reliability and performance. Our AWS DevOps expertise optimizes your
+            cloud infrastructure with a focus on automation and scalability.
+          </p>
+          <a href="#services" id="intellisys-cta-button"
+            >Explore Our Services</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="why-choose-us">
+      <div id="why-choose-container">
+        <h1 id="why-choose-title">
+          Why Choose <span id="why-choose-highlight">Us?</span>
+        </h1>
+        <p id="why-choose-subtitle">
+          We provide industry-leading IT solutions tailored to your needs.
+        </p>
+
+        <div id="hexagon-grid" data-aos="fade-up">
+          <!-- 🚀 First Row - 4 Circles -->
+          <div class="circle-row">
+            <div class="circle-step">
+              <div class="circle-icon">💻</div>
+              <h2 class="circle-title">Comprehensive IT Solutions</h2>
+              <p class="circle-description">
+                End-to-end IT solutions, from consulting and development to
+                maintenance and support.
+              </p>
+            </div>
+
+            <div class="circle-step">
+              <div class="circle-icon">👨‍💻</div>
+              <h2 class="circle-title">Expert IT Professionals</h2>
+              <p class="circle-description">
+                Our team consists of certified IT professionals with expertise
+                in various technologies.
+              </p>
+            </div>
+
+            <div class="circle-step">
+              <div class="circle-icon">⚙️</div>
+              <h2 class="circle-title">Tailored Solutions</h2>
+              <p class="circle-description">
+                We customize solutions to fit your business requirements for
+                optimal performance.
+              </p>
+            </div>
+
+            <div class="circle-step">
+              <div class="circle-icon">📈</div>
+              <h2 class="circle-title">Proven Track Record</h2>
+              <p class="circle-description">
+                A strong reputation for delivering successful IT projects with
+                measurable results.
+              </p>
+            </div>
+          </div>
+
+          <!-- 🚀 Second Row - 2 Circles (Centered) -->
+          <div class="circle-row second-row">
+            <div class="circle-step">
+              <div class="circle-icon">🛠️</div>
+              <h2 class="circle-title">24/7 Support & Maintenance</h2>
+              <p class="circle-description">
+                Our support team is available around the clock to keep your
+                systems running smoothly.
+              </p>
+            </div>
+
+            <div class="circle-step">
+              <div class="circle-icon">🔒</div>
+              <h2 class="circle-title">Focus on Security</h2>
+              <p class="circle-description">
+                We prioritize security and compliance to protect your business
+                from cyber threats.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 id="services-title">
+          Our <span class="custom-orange">Services</span>
+        </h2>
+
+        <!-- Service Cards Grid -->
+        <div id="services-grid">
+          <div class="service-card">
+            <i class="bi bi-laptop"></i>
+            <h3>Custom Software Development</h3>
+            <p>
+              We build tailored software solutions to enhance business
+              productivity and efficiency.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="bi bi-cloud"></i>
+            <h3>Cloud Solutions</h3>
+            <p>
+              Seamless cloud integration, migration, and management for your
+              enterprise.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="bi bi-phone"></i>
+            <h3>Mobile App Development</h3>
+            <p>
+              Developing feature-rich iOS and Android applications with
+              user-friendly interfaces.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="bi bi-wrench"></i>
+            <h3>Web App Maintenance</h3>
+            <p>
+              Ensuring optimal performance and security of your web
+              applications.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="bi bi-brush"></i>
+            <h3>UI/UX</h3>
+            <p>
+              Creating modern, engaging, and intuitive user experiences for
+              applications.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="bi bi-newspaper"></i>
+            <h3>E-Publishing Services</h3>
+            <p>
+              Providing high-quality digital publishing and accessibility
+              solutions.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="bi bi-person-lines-fill"></i>
+            <h3>Staffing</h3>
+            <p>
+              Connecting companies with skilled professionals for long-term
+              success.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="bi bi-search"></i>
+            <h3>Sourcing</h3>
+            <p>
+              Identifying and acquiring the best talents for your organization.
+            </p>
+          </div>
+          <div class="service-card">
+            <i class="bi bi-person-badge"></i>
+            <h3>Internship</h3>
+            <p>
+              Providing real-world experience to students and fresh graduates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="intellisys-career-section">
+      <h2 id="career-title">
+        Explore Career
+        <span id="career-highlight">Opportunities at Intellisys</span>
+      </h2>
+      <div id="career-slider-container">
+        <div id="career-slider">
+          <div
+            class="career-slide"
+            onclick="navigateCareer()"
+          >
+            <img src="l1.png" alt="Digital Marketing" />
+            <h3>Digital Marketing</h3>
+          </div>
+          <div class="career-slide" onclick="navigateCareer()">
+            <img src="l2.png" alt="Java Developer" />
+            <h3>Java Developer</h3>
+          </div>
+          <div
+            class="career-slide"
+            onclick="navigateCareer()"
+          >
+            <img src="l3.png" alt="Full Stack Trainer" />
+            <h3>Full Stack Trainer</h3>
+          </div>
+          <div
+            class="career-slide"
+            onclick="navigateCareer()"
+          >
+            <img src="l4.png" alt="Graphic Designer" />
+            <h3>Graphic Designer</h3>
+          </div>
+          <div
+            class="career-slide"
+            onclick="navigateCareer()"
+          >
+            <img src="l5.png" alt="Automation Tester" />
+            <h3>Automation Tester</h3>
+          </div>
+          <div
+            class="career-slide"
+            onclick="navigateCareer()"
+          >
+            <img src="l6.png" alt="Big Data Analytics" />
+            <h3>Big Data Analytics</h3>
+          </div>
+          <div
+            class="career-slide"
+            onclick="navigateCareer()"
+          >
+            <img src="l1.png" alt="Digital Marketing" />
+            <h3>Digital Marketing</h3>
+          </div>
+          <div class="career-slide" onclick="navigateCareer()">
+            <img src="l2.png" alt="Java Developer" />
+            <h3>Java Developer</h3>
+          </div>
+          <div
+            class="career-slide"
+            onclick="navigateCareer()"
+          >
+            <img src="l3.png" alt="Full Stack Trainer" />
+            <h3>Full Stack Trainer</h3>
+          </div>
+          <div
+            class="career-slide"
+            onclick="navigateCareer()"
+          >
+            <img src="l4.png" alt="Graphic Designer" />
+            <h3>Graphic Designer</h3>
+          </div>
+          <div
+            class="career-slide"
+            onclick="navigateCareer()"
+          >
+            <img src="l5.png" alt="Automation Tester" />
+            <h3>Automation Tester</h3>
+          </div>
+          <div
+            class="career-slide"
+            onclick="navigateCareer()"
+          >
+            <img src="l6.png" alt="Big Data Analytics" />
+            <h3>Big Data Analytics</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-black py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-8 text-center">
+          <div class="text-white" data-aos="fade-up">
+            <h3 class="text-4xl font-bold custom-orange">45+</h3>
+            <p>Employees</p>
+          </div>
+          <div class="text-white" data-aos="fade-up">
+            <h3 class="text-4xl font-bold custom-orange">40+</h3>
+            <p>Clients</p>
+          </div>
+          <div class="text-white" data-aos="fade-up">
+            <h3 class="text-4xl font-bold custom-orange">5+</h3>
+            <p>Influencers</p>
+          </div>
+          <div class="text-white" data-aos="fade-up">
+            <h3 class="text-4xl font-bold custom-orange">35+</h3>
+            <p>Interns</p>
+          </div>
+          <div class="text-white" data-aos="fade-up">
+            <h3 class="text-4xl font-bold custom-orange">2+</h3>
+            <p>Years Of Experience</p>
+          </div>
+
+          <div class="text-white" data-aos="fade-up">
+            <h3 class="text-4xl font-bold custom-orange">7+</h3>
+            <p>Collab Companies</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+
+    <section id="testimonial-section">
+      <span id="testimonial-title">TESTIMONIAL</span>
+      <h2 id="testimonial-heading">Hear From Our Clients</h2>
+
+      <div id="testimonial-container">
+        <div class="testimonial-card active">
+          <p class="testimonial-text">
+            We’ve had a fantastic experience with Intellisys IT Solutions. Their
+            web development services brought our vision to life with impressive
+            results. The team was professional, communicative, and delivered a
+            top-tier product.
+          </p>
+          <div class="testimonial-author">
+            <img
+              src="https://randomuser.me/api/portraits/men/42.jpg"
+              alt="Narendra Gore"
+            />
+            <div>
+              <h3 class="testimonial-name">Narendra Gore</h3>
+              <p class="testimonial-role">Project Manager</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            Working with Intellisys was a game-changer for our business. Their
+            expertise in full stack development helped us launch a seamless and
+            efficient web application. Their professionalism and support were
+            top-notch throughout the process.
+          </p>
+          <div class="testimonial-author">
+            <img
+              src="https://randomuser.me/api/portraits/men/50.jpg"
+              alt="Rohit Shelke"
+            />
+            <div>
+              <h3 class="testimonial-name">Rohit Shelke</h3>
+              <p class="testimonial-role">Software Engineer</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            The Android app developed by Intellisys is outstanding! It's
+            intuitive, fast, and performs flawlessly across devices. Their
+            attention to detail and commitment to quality made the whole
+            development process smooth and enjoyable.
+          </p>
+          <div class="testimonial-author">
+            <img
+              src="https://randomuser.me/api/portraits/men/60.jpg"
+              alt="TLA"
+            />
+            <div>
+              <h3 class="testimonial-name">TLA</h3>
+              <p class="testimonial-role">Founder at Startup Hub</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+          <!-- Left Section - Logo & Address -->
+          <div class="footer-column">
+            <div class="footer-logo">
+              <img src="intellisys (2).png" alt="Company Logo" />
+            </div>
+            <h3 class="footer-title">Address</h3>
+            <p>
+              Gera Imperim Rise, 328-B, Wipro Circle,<br />
+              Opp. to Wipro Company, Hinjawadi Phase II,<br />
+              Hinjawadi Rajiv Gandhi Infotech Park,<br />
+              Pune, Maharashtra 411057
+            </p>
+          </div>
+  
+          <!-- Middle Section - Quick Links -->
+          <div class="footer-column text-center">
+            <h3 class="footer-title">Quick Links</h3>
+            <div class="footer-links">
+              <a href="index.html">Home</a>
+              <a href="services.html">Services</a>
+              <a href="technologies.html">Technologies</a>
+              <a href="career.html">Career</a>
+              <a href="about-us.html">About Us</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </div>
+  
+          <!-- Right Section - Contact & Social -->
+          <div class="footer-column text-right">
+            <h3 class="footer-title">Contact Us</h3>
+            <div class="footer-contact">
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <strong>Phone:</strong> +91 91128 17771
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <strong>Email:</strong>
+                <a
+                  href="mailto:info@intellisysitsolutions.com"
+                  class="footer-email"
+                >
+                  info@intellisysitsolutions.com
+                </a>
+              </div>
+            </div>
+            <h3 class="footer-title1">Follow Us</h3>
+            <div class="footer-social">
+              <a href="https://linkedin.com" target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://twitter.com" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://facebook.com" target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://instagram.com" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p>
+            © 2025 INTELLISYS IT Solutions Private Limited. All Rights Reserved
+          </p>
+          <p>
+            Designed by
+            <a href="https://www.intellisysitsolutions.com/" style="color: orange"
+              >Team INTELLISYS</a
+            >
+          </p>
+        </div>
+      </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          duration: 1000,
+          once: true,
+        });
+
+        const menuButton = document.querySelector("nav button");
+        const menuItems = document.querySelector("nav div.hidden");
+
+        menuButton.addEventListener("click", () => {
+          menuItems.classList.toggle("hidden");
+          menuItems.classList.toggle("flex");
+          menuItems.classList.toggle("flex-col");
+          menuItems.classList.toggle("absolute");
+          menuItems.classList.toggle("top-16");
+          menuItems.classList.toggle("left-0");
+          menuItems.classList.toggle("w-full");
+          menuItems.classList.toggle("bg-black");
+          menuItems.classList.toggle("p-4");
+        });
+      });
+    </script>
+
+    <script>
+      const slider = document.getElementById("career-slider");
+
+      function duplicateSlides() {
+        let slides = document.querySelectorAll(".career-slide");
+        slides.forEach((slide) => {
+          let clone = slide.cloneNode(true); // Clone each slide
+          slider.appendChild(clone); // Append clone to create a seamless effect
+        });
+      }
+
+      duplicateSlides(); // Run this function to duplicate slides for continuous scrolling
+
+      function navigateCareer() {
+    window.location.href = "career.html";
+}
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const slider = document.getElementById("career-slider");
+        const slides = Array.from(slider.children);
+
+        // Duplicate slides for smooth looping
+        slides.forEach((slide) => {
+          let clone = slide.cloneNode(true);
+          slider.appendChild(clone);
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        function animateCounter(element, targetValue) {
+          let count = 0;
+          const speed = Math.ceil(targetValue / 50); // Adjust speed based on value
+          const updateCount = () => {
+            if (count < targetValue) {
+              count += speed;
+              element.innerText = count + "+";
+              setTimeout(updateCount, 50);
+            } else {
+              element.innerText = targetValue + "+";
+            }
+          };
+          updateCount();
+        }
+
+        // Reset values on refresh
+        const defaultCounts = {
+          employees: 45,
+          clients: 40,
+          influencers: 5,
+          interns: 35,
+          experience: 2,
+          collab: 7,
+        };
+
+        // Assign new values to elements
+        const countElements = document.querySelectorAll(".text-white h3");
+        countElements[0].innerText = defaultCounts.employees + "+";
+        countElements[1].innerText = defaultCounts.clients + "+";
+        countElements[2].innerText = defaultCounts.influencers + "+";
+        countElements[3].innerText = defaultCounts.interns + "+";
+        countElements[4].innerText = defaultCounts.experience + "+";
+        countElements[5].innerText = defaultCounts.collab + "+";
+
+        // Animate the counters
+        countElements.forEach((element, index) => {
+          const targetValue = Object.values(defaultCounts)[index]; // Fetch correct values
+          animateCounter(element, targetValue);
+        });
+      });
+    </script>
+
+    <script>
+      
+      document.addEventListener("DOMContentLoaded", function () {
+        let currentIndex = 0;
+        const cards = document.querySelectorAll(".testimonial-card");
+
+        function showTestimonial(index) {
+          cards.forEach((card) => card.classList.remove("active"));
+          cards[index].classList.add("active");
+        }
+
+        document
+          .getElementById("prev-testimonial")
+          .addEventListener("click", function () {
+            currentIndex =
+              currentIndex === 0 ? cards.length - 1 : currentIndex - 1;
+            showTestimonial(currentIndex);
+          });
+
+        document
+          .getElementById("next-testimonial")
+          .addEventListener("click", function () {
+            currentIndex =
+              currentIndex === cards.length - 1 ? 0 : currentIndex + 1;
+            showTestimonial(currentIndex);
+          });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", function () {
+          mobileMenu.classList.toggle("active");
+        });
+      });
+    </script>
+
+    <!-- AOS Library for Animations -->
+
+    <!-- AOS Library for Scroll Animations -->
+
+    <script>
+      AOS.init({
+        duration: 1000, // Animation duration
+        once: true, // Ensures animation only runs once
+        delay: 0, // No delay between items
+      });
+    </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const serviceDropdown = document.querySelector(".dropdown > a");
+    const dropdownContent = document.querySelector(".dropdown-content");
+
+    // Toggle Mobile Menu
+    menuToggle.addEventListener("click", function (event) {
+        navLinks.classList.toggle("active");
+    });
+
+    // Toggle Services Dropdown in Mobile View
+    serviceDropdown.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default link action
+        dropdownContent.classList.toggle("show");
+    });
+
+    // Close Menu When Clicking Outside
+    document.addEventListener("click", function (event) {
+        if (
+            !menuToggle.contains(event.target) &&
+            !navLinks.contains(event.target)
+        ) {
+            navLinks.classList.remove("active");
+            dropdownContent.classList.remove("show"); // Close dropdown too
+        }
+    });
+
+    // Close Menu When Clicking a Link
+    navLinks.querySelectorAll("a:not(.dropdown > a)").forEach((link) => {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+            dropdownContent.classList.remove("show");
+        });
+    });
+});
+    </script>
+  </body>
+</html>
