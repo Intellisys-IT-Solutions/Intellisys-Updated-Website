@@ -243,7 +243,7 @@ nav.scrolled {
 
 .flutter-icon {
     width: 50px;
-    /* Adjust the size */
+     margin: 0 auto 15px auto;
     height: auto;
     margin-bottom: 15px;
 }
@@ -352,18 +352,6 @@ nav.scrolled {
     text-align: center;
     padding-top: 0;
 }
-
-.flutter-icon {
-    width: 50px;
-    /* Adjust size */
-    height: 50px;
-    margin-bottom: 15px;
-}
-
-
-
-
-
 .tech-container-backend {
     opacity: 0;
     transform: translateY(-30px);
