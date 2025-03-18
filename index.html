@@ -21,27 +21,12 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <link rel="stylesheet" href="navbar.css" />
   </head>
 
@@ -471,6 +456,29 @@
       </div>
     </section>
 
+    <div class="form-container">
+      <h2>Our Project Proposal</h2>
+      <form id="projectProposalForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email ID" required>
+        <select id="category" required>
+          <option value="">Select Category</option>
+          <option value="Website Development">Website Development</option>
+          <option value="Application Development">Application Development</option>
+          <option value="Digital Marketing">Digital Marketing/SEO</option>
+          <option value="HealthCare">HealthCare</option>
+          <option value="Cyber Security">Cyber Security</option>
+          <option value="Cloud">Cloud</option>
+          <option value="UIUX">UI/UX</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="tel" id="contact" placeholder="Your Contact Number" required>
+        <textarea id="description" placeholder="Project Description" rows="4" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <p id="responseMessage"></p> <!-- For showing success/error messages -->
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="footer-container">
@@ -493,11 +501,10 @@
             <h3 class="footer-title">Quick Links</h3>
             <div class="footer-links">
               <a href="index.html">Home</a>
-              <a href="services.html">Services</a>
-              <a href="technologies.html">Technologies</a>
-              <a href="career.html">Career</a>
-              <a href="about-us.html">About Us</a>
-              <a href="contact.html">Contact</a>
+              <a href="Technologies.html">Technology</a>
+              <a href="Career.html">Career</a>
+              <a href="About.html">About Us</a>
+              <a href="Contact.html">Contact</a>
             </div>
           </div>
   
@@ -522,7 +529,7 @@
             </div>
             <h3 class="footer-title1">Follow Us</h3>
             <div class="footer-social">
-              <a href="https://linkedin.com" target="_blank"
+              <a href="https://www.linkedin.com/company/intellisys-it-solutions-private-limited/posts/?feedView=all" target="_blank"
                 ><i class="fab fa-linkedin"></i
               ></a>
               <a href="https://twitter.com" target="_blank"
@@ -531,7 +538,7 @@
               <a href="https://facebook.com" target="_blank"
                 ><i class="fab fa-facebook"></i
               ></a>
-              <a href="https://instagram.com" target="_blank"
+              <a href="https://www.instagram.com/intellisys_it_solutions/?hl=enom" target="_blank"
                 ><i class="fab fa-instagram"></i
               ></a>
             </div>
@@ -552,6 +559,76 @@
         </div>
       </footer>
 
+
+      <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+          const form = document.getElementById("projectProposalForm");
+          const responseMessage = document.getElementById("responseMessage");
+        
+          form.addEventListener("submit", async function (event) {
+            event.preventDefault(); // Prevent form from reloading the page
+        
+            // Collect form data
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const category = document.getElementById("category").value;
+            const contact = document.getElementById("contact").value.trim();
+            const description = document.getElementById("description").value.trim();
+        
+            // Regular Expressions for Validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const nameRegex = /^[a-zA-Z\s]{3,50}$/;
+            const phoneRegex = /^\d{10}$/;
+        
+            if (!name || !email || !category || !contact || !description) {
+              responseMessage.innerHTML = "⚠ All fields are required.";
+              responseMessage.style.color = "red";
+              return;
+            }
+            if (!nameRegex.test(name)) {
+              responseMessage.innerHTML = "⚠ Invalid name format (Only letters & spaces allowed).";
+              responseMessage.style.color = "red";
+              return;
+            }
+            if (!emailRegex.test(email)) {
+              responseMessage.innerHTML = "⚠ Invalid email format.";
+              responseMessage.style.color = "red";
+              return;
+            }
+            if (!phoneRegex.test(contact)) {
+              responseMessage.innerHTML = "⚠ Invalid phone number (10 digits required).";
+              responseMessage.style.color = "red";
+              return;
+            }
+        
+            // Send data to backend API
+            try {
+              const response = await fetch("http://localhost:5000/api/project-proposal", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, category, contact, description }),
+              });
+        
+              const data = await response.json();
+              if (response.ok) {
+                responseMessage.innerHTML = "✅ Proposal submitted successfully!";
+                responseMessage.style.color = "green";
+                form.reset();
+              } else {
+                responseMessage.innerHTML = `⚠ Error: ${data.error}`;
+                responseMessage.style.color = "red";
+              }
+            } catch (error) {
+              console.error("Error:", error);
+              responseMessage.innerHTML = "⚠ Something went wrong. Try again later.";
+              responseMessage.style.color = "red";
+            }
+          });
+        });
+        
+      </script>
+    
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         AOS.init({
@@ -690,7 +767,6 @@
 
     <!-- AOS Library for Animations -->
 
-    <!-- AOS Library for Scroll Animations -->
 
     <script>
       AOS.init({
@@ -700,43 +776,99 @@
       });
     </script>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
-    const serviceDropdown = document.querySelector(".dropdown > a");
-    const dropdownContent = document.querySelector(".dropdown-content");
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Initialize AOS
+      if (typeof AOS !== 'undefined') {
+          AOS.init({
+              duration: 1000,
+              once: true,
+              disable: 'mobile'
+          });
+      }
+  
+      // Mobile menu toggle functionality
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+      
+      if (menuToggle && navLinks) {
+          menuToggle.addEventListener('click', function() {
+              navLinks.classList.toggle('active');
+              menuToggle.classList.toggle('active');
+          });
+      }
+      
+      // Handle dropdown menus on mobile
+      const dropdowns = document.querySelectorAll('.dropdown');
+      
+      dropdowns.forEach(dropdown => {
+          const dropdownToggle = dropdown.querySelector('a');
+          const dropdownContent = dropdown.querySelector('.dropdown-content');
+          
+          if (dropdownToggle && dropdownContent) {
+              dropdownToggle.addEventListener('click', function(e) {
+                  if (window.innerWidth <= 768) {
+                      e.preventDefault();
+                      
+                      // Close all other open dropdowns
+                      document.querySelectorAll('.dropdown-content').forEach(content => {
+                          if (content !== dropdownContent && content.style.display === 'block') {
+                              content.style.display = 'none';
+                          }
+                      });
+                      
+                      // Toggle this dropdown
+                      dropdownContent.style.display = 
+                          dropdownContent.style.display === 'block' ? 'none' : 'block';
+                  }
+              });
+          }
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+          const isClickInsideNav = event.target.closest('nav');
+          const isMenuOpen = navLinks && navLinks.classList.contains('active');
+          
+          if (!isClickInsideNav && isMenuOpen) {
+              navLinks.classList.remove('active');
+              if (menuToggle) menuToggle.classList.remove('active');
+          }
+      });
+      
+      // Handle window resize - reset menus
+      window.addEventListener('resize', function() {
+          if (window.innerWidth > 768) {
+              if (navLinks) navLinks.classList.remove('active');
+              if (menuToggle) menuToggle.classList.remove('active');
+              
+              document.querySelectorAll('.dropdown-content').forEach(content => {
+                  content.style.display = '';
+              });
+          }
+      });
+      
+      // Scroll event for navbar background
+      window.addEventListener('scroll', function() {
+          const navbar = document.querySelector('nav');
+          if (navbar) {
+              if (window.scrollY > 50) {
+                  navbar.classList.add('scrolled');
+              } else {
+                  navbar.classList.remove('scrolled');
+              }
+          }
+      });
+  });
 
-    // Toggle Mobile Menu
-    menuToggle.addEventListener("click", function (event) {
-        navLinks.classList.toggle("active");
-    });
-
-    // Toggle Services Dropdown in Mobile View
-    serviceDropdown.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent default link action
-        dropdownContent.classList.toggle("show");
-    });
-
-    // Close Menu When Clicking Outside
-    document.addEventListener("click", function (event) {
-        if (
-            !menuToggle.contains(event.target) &&
-            !navLinks.contains(event.target)
-        ) {
-            navLinks.classList.remove("active");
-            dropdownContent.classList.remove("show"); // Close dropdown too
-        }
-    });
-
-    // Close Menu When Clicking a Link
-    navLinks.querySelectorAll("a:not(.dropdown > a)").forEach((link) => {
-        link.addEventListener("click", function () {
-            navLinks.classList.remove("active");
-            dropdownContent.classList.remove("show");
-        });
-    });
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("http://localhost:5000/api/track-visitor")
+        .then(response => response.json())
+        .then(data => {
+            console.log("Visitor Count Updated:", data.count);
+        })
+        .catch(error => console.error("❌ Error tracking visitor:", error));
 });
-    </script>
+  </script>
   </body>
 </html>

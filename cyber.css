@@ -101,6 +101,7 @@ nav.scrolled {
     cursor: pointer;
 }
 
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .menu-card {
@@ -123,31 +124,32 @@ nav.scrolled {
     .nav-links a {
         display: block;
         padding: 10px 0;
+        border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
     }
 
     .nav-links.active {
         display: flex;
-        max-height: 400px; /* Controls dropdown height */
-        overflow-y: auto; /* Enables scrolling */
-    }
-
-    .dropdown-content {
-        position: relative;
-        box-shadow: none;
-        max-height: 200px; /* Set a max height for scrolling */
+         max-height: 230px; /* Set a max height for scrolling */
         overflow-y: auto; /* Enable vertical scrolling */
     }
-
-    .dropdown-content.show {
-        display: flex;
-        flex-direction: column;
+    .dropdown-content {
+        position: relative;
+        background: black;
+        display: none;
+        text-align: center;
     }
 
-    .dropdown>a {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
+    .dropdown-content a {
+        color: white;
+    }
+
+    .dropdown-content a:hover {
+        background: #FC7F03;
+    }
+
+    /* Style for the Menu Card Icon */
+    #menu-toggle i {
+        color: white;
     }
 }
 

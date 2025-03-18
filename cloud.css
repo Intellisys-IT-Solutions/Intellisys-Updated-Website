@@ -1,18 +1,18 @@
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
+    background-color: #ffffff;
+    color: black;
 }
 
-/* Navigation (Header) */
+/* Navbar */
 nav {
     background: black;
     position: fixed;
@@ -28,15 +28,14 @@ nav {
     transition: background 0.3s ease-in-out;
 }
 
-.logo img {
-    max-width: 150px;
-}
 nav.scrolled {
     background: rgba(0, 0, 0, 0.9);
 }
 
-.logo img {
-    max-width: 140px;
+.logo {
+    margin-top: 4rem;
+    height: 150px;
+    width: 600px;
 }
 
 /* Navigation Links */
@@ -70,6 +69,7 @@ nav.scrolled {
 .nav-links a:hover::after {
     width: 100%;
 }
+
 /* Hamburger Menu Button */
 .menu-card {
     display: none;
@@ -83,6 +83,8 @@ nav.scrolled {
     color: white;
     cursor: pointer;
 }
+
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -106,30 +108,32 @@ nav.scrolled {
     .nav-links a {
         display: block;
         padding: 10px 0;
+        border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
     }
 
     .nav-links.active {
         display: flex;
-        max-height: 400px; /* Controls dropdown height */
-        overflow-y: auto; /* Enables scrolling */
+         max-height: 230px; /* Set a max height for scrolling */
+        overflow-y: auto; /* Enable vertical scrolling */
     }
     .dropdown-content {
         position: relative;
         background: black;
-        max-height: 200px; /* Set a max height for scrolling */
-        overflow-y: auto; /* Enable vertical scrolling */
+        display: none;
+        text-align: center;
     }
 
-    .dropdown-content.show {
-        display: flex;
-        flex-direction: column;
+    .dropdown-content a {
+        color: white;
     }
 
-    .dropdown > a {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
+    .dropdown-content a:hover {
+        background: #FC7F03;
+    }
+
+    /* Style for the Menu Card Icon */
+    #menu-toggle i {
+        color: white;
     }
 }
 
@@ -169,6 +173,20 @@ nav.scrolled {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* Mobile Menu Button */
+.menu-card {
+    display: none;
+}
+
+#menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 /* Responsive Navbar */
 @media (max-width: 768px) {
     .menu-card {
@@ -214,7 +232,6 @@ nav.scrolled {
         color: white;
     }
 }
-
 
 /* Hero Section */
 .hero-section {

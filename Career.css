@@ -85,7 +85,18 @@ nav.scrolled {
     color: white;
     cursor: pointer;
 }
-
+.search-btn {
+    background-color: #FC7F03;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: inline-block;
+  }
 /* Responsive Design */
 @media (max-width: 1024px) {
     .menu-card {
@@ -105,14 +116,15 @@ nav.scrolled {
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     }
 
-    .nav-links a {
+   .nav-links a {
         display: block;
         padding: 10px 0;
+        border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
     }
 
     .nav-links.active {
         display: flex;
-        max-height: 400px; /* Controls dropdown height */
+        max-height: 230px; /* Controls dropdown height */
         overflow-y: auto; /* Enables scrolling */
     }
     .dropdown-content {
@@ -458,29 +470,35 @@ nav.scrolled {
 /* Job Listings Section */
 .container1 {
     text-align: center;
-    width: 90%; /* Make it more flexible for all screens */
+    width: 100%; /* Make it more flexible for all screens */
     max-width: 900px;
     padding-top: 3rem;
-    /*   */
     font-weight: bold;
-}
-.main-heading1 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    text-align: center;
-    margin-left: 10rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.main-heading1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding-top: 2rem;
+    font-weight: bold;
+    text-align: center; /* Ensure heading is centered */
+}
+
+/* Search Row */
 .search-row {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    margin-bottom: 30px;
-    margin-left: 10rem;
+    margin-top: 20px;
+    margin-left: 10%; /* Added margin to create space from the left */
+    margin-right: 10%; /* Added margin to create space from the right */
 }
 
+/* Search Box Styling */
 .search-box {
-    width: 50%;
+    width: 50%; /* Adjust the width of each input box */
 }
 
 .search-box input {
@@ -549,16 +567,15 @@ nav.scrolled {
     max-width: 450px;
     text-align: left;
     position: relative;
-    max-height: 90vh; /* Prevents overflow */
-    overflow-y: auto; /* Enables scrolling if needed */
+    max-height: 90vh;
+    overflow-y: auto; 
 }
 
-/*Default Close Button Styling */
  .close {
     position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     cursor: pointer;
     background: transparent;
@@ -572,11 +589,14 @@ nav.scrolled {
     color: #FC7F03;
     transform: scale(1.2); /* Slight zoom effect */
 }
+.Custom{
+    font-size: 25px;
+}
 
 /* 📱 Responsive Close Button for Mobile */
 @media (max-width: 768px) {
     .close {
-        font-size: 18px; /* Reduce size for mobile */
+        font-size: 20px; /* Reduce size for mobile */
         top: 8px;
         right: 12px;
         padding: 3px;
@@ -586,7 +606,7 @@ nav.scrolled {
 /* 📱 Even Smaller Screens (Phones) */
 @media (max-width: 480px) {
     .close {
-        font-size: 16px; /* Further reduce size */
+        font-size: 18px; /* Further reduce size */
         top: 6px;
         right: 10px;
         padding: 2px;

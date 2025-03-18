@@ -22,7 +22,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <!-- Added Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script defer src="Career.js"></script>
@@ -120,6 +121,9 @@
         </div>
         <div class="search-box">
           <input type="text" id="location" placeholder="Search Location" />
+        </div>
+        <div class="search-box">
+          <button class="search-btn" onclick="searchJobs()">Search</button>
         </div>
       </div>
     </div>
@@ -334,11 +338,10 @@
           <h3 class="footer-title">Quick Links</h3>
           <div class="footer-links">
             <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="technologies.html">Technologies</a>
-            <a href="career.html">Career</a>
-            <a href="about-us.html">About Us</a>
-            <a href="contact.html">Contact</a>
+            <a href="Technologies.html">Technology</a>
+            <a href="Career.html">Career</a>
+            <a href="About.html">About Us</a>
+            <a href="Contact.html">Contact</a>
           </div>
         </div>
 
@@ -363,7 +366,9 @@
           </div>
           <h3 class="footer-title1">Follow Us</h3>
           <div class="footer-social">
-            <a href="https://linkedin.com" target="_blank"
+            <a
+              href="https://www.linkedin.com/company/intellisys-it-solutions-private-limited/posts/?feedView=all"
+              target="_blank"
               ><i class="fab fa-linkedin"></i
             ></a>
             <a href="https://twitter.com" target="_blank"
@@ -372,7 +377,9 @@
             <a href="https://facebook.com" target="_blank"
               ><i class="fab fa-facebook"></i
             ></a>
-            <a href="https://instagram.com" target="_blank"
+            <a
+              href="https://www.instagram.com/intellisys_it_solutions/?hl=enom"
+              target="_blank"
               ><i class="fab fa-instagram"></i
             ></a>
           </div>
@@ -502,39 +509,93 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // Initialize AOS
+        if (typeof AOS !== "undefined") {
+          AOS.init({
+            duration: 1000,
+            once: true,
+            disable: "mobile",
+          });
+        }
+
+        // Mobile menu toggle functionality
         const menuToggle = document.getElementById("menu-toggle");
         const navLinks = document.getElementById("nav-links");
-        const serviceDropdown = document.querySelector(".dropdown > a");
-        const dropdownContent = document.querySelector(".dropdown-content");
 
-        // Toggle Mobile Menu
-        menuToggle.addEventListener("click", function (event) {
-          navLinks.classList.toggle("active");
-        });
+        if (menuToggle && navLinks) {
+          menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+            menuToggle.classList.toggle("active");
+          });
+        }
 
-        // Toggle Services Dropdown in Mobile View
-        serviceDropdown.addEventListener("click", function (event) {
-          event.preventDefault(); // Prevent default link action
-          dropdownContent.classList.toggle("show");
-        });
+        // Handle dropdown menus on mobile
+        const dropdowns = document.querySelectorAll(".dropdown");
 
-        // Close Menu When Clicking Outside
-        document.addEventListener("click", function (event) {
-          if (
-            !menuToggle.contains(event.target) &&
-            !navLinks.contains(event.target)
-          ) {
-            navLinks.classList.remove("active");
-            dropdownContent.classList.remove("show"); // Close dropdown too
+        dropdowns.forEach((dropdown) => {
+          const dropdownToggle = dropdown.querySelector("a");
+          const dropdownContent = dropdown.querySelector(".dropdown-content");
+
+          if (dropdownToggle && dropdownContent) {
+            dropdownToggle.addEventListener("click", function (e) {
+              if (window.innerWidth <= 768) {
+                e.preventDefault();
+
+                // Close all other open dropdowns
+                document
+                  .querySelectorAll(".dropdown-content")
+                  .forEach((content) => {
+                    if (
+                      content !== dropdownContent &&
+                      content.style.display === "block"
+                    ) {
+                      content.style.display = "none";
+                    }
+                  });
+
+                // Toggle this dropdown
+                dropdownContent.style.display =
+                  dropdownContent.style.display === "block" ? "none" : "block";
+              }
+            });
           }
         });
 
-        // Close Menu When Clicking a Link
-        navLinks.querySelectorAll("a:not(.dropdown > a)").forEach((link) => {
-          link.addEventListener("click", function () {
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+          const isClickInsideNav = event.target.closest("nav");
+          const isMenuOpen = navLinks && navLinks.classList.contains("active");
+
+          if (!isClickInsideNav && isMenuOpen) {
             navLinks.classList.remove("active");
-            dropdownContent.classList.remove("show");
-          });
+            if (menuToggle) menuToggle.classList.remove("active");
+          }
+        });
+
+        // Handle window resize - reset menus
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 768) {
+            if (navLinks) navLinks.classList.remove("active");
+            if (menuToggle) menuToggle.classList.remove("active");
+
+            document
+              .querySelectorAll(".dropdown-content")
+              .forEach((content) => {
+                content.style.display = "";
+              });
+          }
+        });
+
+        // Scroll event for navbar background
+        window.addEventListener("scroll", function () {
+          const navbar = document.querySelector("nav");
+          if (navbar) {
+            if (window.scrollY > 50) {
+              navbar.classList.add("scrolled");
+            } else {
+              navbar.classList.remove("scrolled");
+            }
+          }
         });
       });
     </script>

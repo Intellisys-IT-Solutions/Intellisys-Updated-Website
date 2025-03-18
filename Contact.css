@@ -34,9 +34,7 @@ nav.scrolled {
 .logo {
     margin-top: 4rem;
     height: 150px;
-    /* Increased from 120px */
     width: 600px;
-    /* Increased from 500px */
 }
 
 /* Navigation Links */
@@ -85,6 +83,20 @@ nav.scrolled {
     cursor: pointer;
 }
 
+/* Ensure dropdown icon is always visible */
+.dropdown>a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.dropdown>a i {
+    color: white;
+    font-size: 14px;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .menu-card {
@@ -107,29 +119,35 @@ nav.scrolled {
     .nav-links a {
         display: block;
         padding: 10px 0;
+        border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
     }
 
     .nav-links.active {
         display: flex;
+         max-height: 230px; /* Set a max height for scrolling */
+        overflow-y: auto; /* Enable vertical scrolling */
     }
     .dropdown-content {
         position: relative;
-        box-shadow: none;
-        background: transparent;
+        background: black;
+        display: none;
+        text-align: center;
     }
 
-    .dropdown-content.show {
-        display: flex;
-        flex-direction: column;
+    .dropdown-content a {
+        color: white;
     }
 
-    .dropdown > a {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
+    .dropdown-content a:hover {
+        background: #FC7F03;
+    }
+
+    /* Style for the Menu Card Icon */
+    #menu-toggle i {
+        color: white;
     }
 }
+
 
 
 /* Dropdown Styles */
@@ -202,8 +220,6 @@ nav.scrolled {
 
     .nav-links.active {
         display: flex;
-        max-height: 400px; /* Controls dropdown height */
-        overflow-y: auto; /* Enables scrolling */
     }
 
     .nav-links a {
@@ -214,8 +230,8 @@ nav.scrolled {
     .dropdown-content {
         position: relative;
         background: black;
-        max-height: 200px; /* Set a max height for scrolling */
-        overflow-y: auto; /* Enable vertical scrolling */
+        display: none;
+        text-align: center;
     }
 
     .dropdown-content a {
@@ -224,6 +240,11 @@ nav.scrolled {
 
     .dropdown-content a:hover {
         background: #FC7F03;
+    }
+
+    /* Style for the Menu Card Icon */
+    #menu-toggle i {
+        color: white;
     }
 
     /* Style for the Menu Card Icon */
@@ -251,7 +272,8 @@ nav.scrolled {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 40px;
-    margin-top: 30px;   /* Added margin-top */
+    margin-top: 30px;
+    /* Added margin-top */
     color: #333;
 }
 
@@ -271,10 +293,8 @@ nav.scrolled {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: left;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
-    padding: 10px; /* Reduce top padding */
+    padding: 10px;
+    /* Reduce top padding */
 }
 
 
@@ -282,14 +302,16 @@ nav.scrolled {
 .contact-form h2 {
     font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 10px; /* Reduced margin */
+    margin-bottom: 10px;
+    /* Reduced margin */
     color: #333;
     text-align: center;
     padding-top: 2rem;
 }
 
 .contact-form form {
-    margin-top: -10px; /* Reducing the gap further */
+    margin-top: -10px;
+    /* Reducing the gap further */
     padding-top: 0;
 }
 
@@ -376,6 +398,7 @@ nav.scrolled {
     justify-content: space-between; */
     /* Ensures equal height */
 }
+
 .contact-form h2 {
     font-size: 1.8rem;
     font-weight: 600;
@@ -384,6 +407,7 @@ nav.scrolled {
     text-align: center;
     /* padding-top: 10px; Reduce padding further */
 }
+
 .contact-info h2 {
     font-size: 1.8rem;
     font-weight: 600;
@@ -417,14 +441,19 @@ nav.scrolled {
     border-color: #ff7e5f;
     outline: none;
 }
+
 .contact-form {
-    padding-top: 1px; /* Reduce the padding */
+    padding-top: 1px;
+    /* Reduce the padding */
 }
 
 .contact-form form {
-    margin-top: 0; /* Remove any extra space */
-    padding-top: 0; /* Remove extra padding */
+    margin-top: 0;
+    /* Remove any extra space */
+    padding-top: 0;
+    /* Remove extra padding */
 }
+
 .submit-btn {
     width: 100%;
     padding: 14px;
@@ -500,7 +529,7 @@ nav.scrolled {
         width: 100%;
     }
 
-   
+
 }
 
 @media (max-width: 768px) {
@@ -531,6 +560,7 @@ nav.scrolled {
         text-align: center;
     }
 }
+
 /* 🔹 Tablet View (Up to 992px) */
 @media (max-width: 992px) {
     .contact-container {
@@ -547,6 +577,7 @@ nav.scrolled {
     .contact-info iframe {
         height: 350px;
     }
+
 }
 
 /* 🔹 Mobile View (Up to 768px) */
@@ -594,6 +625,72 @@ nav.scrolled {
     }
 }
 
+/* 🔹 Responsive Styling for Tablet */
+@media (max-width: 992px) {
+    .contact-info {
+        align-items: flex-start;
+    }
+
+    .contact-info p {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: flex-start;
+        /* Icons on left, text on right */
+        flex-direction: row;
+        /* Normal order: Icons first, then text */
+        flex-wrap: wrap;
+    }
+
+    .contact-info p i {
+        min-width: 30px;
+        text-align: left;
+        margin-left: 10px;
+    }
+
+    .contact-info p.address {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+}
+
+/* 🔹 Responsive Styling for Mobile */
+@media (max-width: 768px) {
+    .contact-info {
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* Keep everything left-aligned */
+        gap: 8px;
+    }
+
+    .contact-info p {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        /* Icons on left, text on right */
+        gap: 5px;
+        font-size: 1rem;
+        flex-direction: row;
+        /* Keep icons first and text after */
+    }
+
+    .contact-info p i {
+        font-size: 1.4rem;
+        min-width: 20px;
+        text-align: left;
+        margin-left: 10px;
+    }
+    .contact-info p.address {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-right: -10px;
+    }
+
+}
 
 /* FOOTER MAIN STYLING */
 footer {
@@ -618,10 +715,11 @@ footer {
 .footer-column {
     flex: 1;
     padding: 20px;
-    min-width: 280px; 
-    text-align: center; 
+    min-width: 280px;
+    text-align: center;
 }
-.footer-column p{
+
+.footer-column p {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
@@ -631,10 +729,11 @@ footer {
     max-width: 200px;
     margin-bottom: 15px;
 }
-.footer-column.text-center, 
+
+.footer-column.text-center,
 .footer-column.text-right {
     flex: 1;
-    text-align: center; 
+    text-align: center;
 }
 
 /* FOOTER TITLES */
@@ -697,7 +796,7 @@ footer {
     font-size: 1rem;
     transition: color 0.3s ease-in-out;
     gap: 10px;
-    
+
 }
 
 
@@ -770,9 +869,11 @@ footer {
 @media (max-width: 992px) {
     .footer-container {
         flex-wrap: wrap;
-        justify-content: flex-start; /* Align content to the left */
+        justify-content: flex-start;
+        /* Align content to the left */
         text-align: left;
-        padding-left: 20px; /* Ensure spacing from left */
+        padding-left: 20px;
+        /* Ensure spacing from left */
     }
 
     .footer-column {
@@ -786,14 +887,16 @@ footer {
     .footer-column.text-center {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* Align to the left */
+        align-items: flex-start;
+        /* Align to the left */
         text-align: left;
     }
 
     .footer-links {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* Move to left */
+        align-items: flex-start;
+        /* Move to left */
         gap: 8px;
     }
 
@@ -804,7 +907,8 @@ footer {
     }
 
     .footer-title {
-        text-align: left; /* Ensures all titles are aligned left */
+        text-align: left;
+        /* Ensures all titles are aligned left */
         font-weight: bold;
     }
 
@@ -812,7 +916,7 @@ footer {
     .footer-social {
         justify-content: flex-start;
     }
-   
+
 }
 
 /* FOOTER RESPONSIVE DESIGN FOR MOBILE */
@@ -820,7 +924,8 @@ footer {
     .footer-container {
         flex-direction: column;
         gap: 20px;
-        align-items: flex-start; /* Align all sections to left */
+        align-items: flex-start;
+        /* Align all sections to left */
         padding-left: 15px;
     }
 
@@ -833,7 +938,8 @@ footer {
     .footer-links {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* Move to left */
+        align-items: flex-start;
+        /* Move to left */
         gap: 10px;
     }
 
@@ -841,7 +947,8 @@ footer {
     .footer-contact {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* Left-align the contact info */
+        align-items: flex-start;
+        /* Left-align the contact info */
         gap: 10px;
     }
 

@@ -36,9 +36,7 @@ nav.scrolled {
 .logo {
     margin-top: 4rem;
     height: 150px;
-    /* Increased from 120px */
     width: 600px;
-    /* Increased from 500px */
 }
 
 /* Navigation Links */
@@ -71,6 +69,72 @@ nav.scrolled {
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+/* Hamburger Menu Button */
+.menu-card {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-card button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .menu-card {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: black;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+         max-height: 230px; /* Set a max height for scrolling */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+    .dropdown-content {
+        position: relative;
+        background: black;
+        display: none;
+        text-align: center;
+    }
+
+    .dropdown-content a {
+        color: white;
+    }
+
+    .dropdown-content a:hover {
+        background: #FC7F03;
+    }
+
+    /* Style for the Menu Card Icon */
+    #menu-toggle i {
+        color: white;
+    }
 }
 
 /* Dropdown Styles */
@@ -143,8 +207,6 @@ nav.scrolled {
 
     .nav-links.active {
         display: flex;
-        max-height: 400px; /* Controls dropdown height */
-        overflow-y: auto; /* Enables scrolling */
     }
 
     .nav-links a {
@@ -155,8 +217,6 @@ nav.scrolled {
     .dropdown-content {
         position: relative;
         background: black;
-        max-height: 200px; /* Set a max height for scrolling */
-        overflow-y: auto; /* Enable vertical scrolling */
     }
 
     .dropdown-content a {
@@ -167,122 +227,33 @@ nav.scrolled {
         background: #FC7F03;
     }
 
-    /* Style for the Menu Card Icon */
     #menu-toggle i {
         color: white;
-        transition: none; /* Removed rotation effect */
-    }
-}
-#menu-toggle.active i {
-    transform: none !important; /* Prevents rotation */
-}
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-
-    100% {
-        transform: translateY(0px);
     }
 }
 
-.section {
-    margin-bottom: 2rem;
-}
-
-.bg-gray-100 {
-    background-color: #f7fafc;
-}
-
-.bg-gray-50 {
-    background-color: #f9fafb;
-}
-
-.shadow-lg {
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-}
-
-.py-16 {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-}
-
-.px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.text-gray-800 {
-    color: #2d3748;
-}
-
-.text-gray-600 {
-    color: #718096;
-}
-
-.text-center {
+.company-heading {
+    font-size: 2.5rem; /* Default for desktop */
+    font-weight: bold;
     text-align: center;
+    white-space: nowrap; /* Prevents text from breaking into multiple lines */
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 
-.leading-relaxed {
-    line-height: 1.75;
-}
-
-.rounded-lg {
-    border-radius: 0.5rem;
-}
-
-.gap-12 {
-    gap: 3rem;
-}
-
-
-.custom-orange {
-    color: #FC7F03;
-}
-
-.bg-custom-orange {
-    background-color: #d9920fce;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-}
-
-.review-scroll {
-    animation: scroll 30s linear infinite;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-100%);
+/* Tablet View */
+@media (max-width: 1024px) {
+    .company-heading {
+        font-size: 2rem; /* Adjust font size for tablets */
     }
 }
 
-/* Font Styles */
-.font-montserrat {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.font-raleway {
-    font-family: 'Raleway', sans-serif;
-}
-
-.font-playfair {
-    font-family: 'Playfair Display', serif;
-}
-
-.font-lora {
-    font-family: 'Lora', serif;
+/* Mobile View */
+@media (max-width: 768px) {
+    .company-heading {
+        font-size: 1.5rem; /* Adjust font size for mobile */
+    }
 }
 
 /* Styling for Address and Contact Sections */
@@ -495,7 +466,7 @@ video {
     width: 100%;
     border-radius: 10px;
     margin-right: 0 3rem;
-
+    
 }
 
 .border-frame {
@@ -579,10 +550,7 @@ video {
     }
 }
 
-/* Values Section NEW CSS */
 
-
-/* Section Title */
 /* Center the section without affecting other parts */
 .values-container {
     display: flex;
@@ -730,8 +698,7 @@ section.bg-white {
 
 
 
-/* Section Styling */
-/* General Styles */
+
 
 .gallery-section {
     text-align: center;
@@ -848,7 +815,6 @@ ul.slides {
     right: 10px;
 }
 
-
 /* Dots */
 .carousel-dots {
     position: absolute;
@@ -887,11 +853,6 @@ input#img-6:checked~.carousel-dots label#img-dot-6 {
     opacity: 1;
 }
 
-
-
-
-
-/* Clients Section */
 /* Clients Section */
 .clients-section {
     text-align: center;
@@ -1338,7 +1299,6 @@ footer {
         padding: 0;
         text-align: center;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        z-index: 1000;
     }
 
     .nav-links.active {
@@ -1739,30 +1699,7 @@ footer {
     }
 }
 
-/* Animation for Mobile Menu Toggle */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
 
-    100% {
-        transform: rotate(180deg);
-    }
-}
-
-#menu-toggle i {
-    transition: transform 0.3s ease;
-}
-
-#menu-toggle.active i {
-    animation: spin 0.3s forwards;
-}
-
-/* Fix for overflowing elements */
-.overflow-x-hidden {
-    overflow-x: hidden;
-    width: 100%;
-}
 
 /* General responsive typography */
 @media (max-width: 768px) {
