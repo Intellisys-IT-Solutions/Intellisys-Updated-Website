@@ -825,4 +825,199 @@ h1 {
         padding-top: 80px;
     }
 }
+/* Base navigation styles */
+nav {
+    padding: 20px 40px;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    max-width: 100%;
+}
+
+.nav-links a {
+    text-decoration: none;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 220px;
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#home {
+    padding-top: 120px;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.subtext {
+    margin-top: 10px;
+}
+
+/* Large screens (laptops/desktops) */
+@media (max-width: 1024px) {
+    .nav-links {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .dropdown-content {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Tablet-specific enhancements (768px - 900px) */
+@media (min-width: 768px) and (max-width: 900px) {
+    nav {
+        padding: 15px 25px;
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        background: transparent;
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+    
+    .nav-links a {
+        font-size: 15px;
+        padding: 8px 10px;
+    }
+    
+    .dropdown-content {
+        width: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    #home {
+        padding-top: 100px;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+    
+    /* Content enhancements for tablets */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+    }
+    
+    .col {
+        flex: 0 0 50%;
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+    
+    /* For grids that should display as 2 columns on tablets */
+    .grid-item {
+        width: calc(50% - 20px);
+        margin: 10px;
+    }
+}
+
+/* Mobile menu (tablets in portrait and mobile phones) */
+@media (max-width: 767px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: black;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 15px;
+        z-index: 1000;
+    }
+
+    .nav-links a {
+        color: white;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        transform: none;
+        background: #333;
+        margin-top: 5px;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+    
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 600px) {
+    nav {
+        padding: 15px 20px;
+    }
+    
+    .nav-links a {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    #home {
+        padding-top: 80px;
+    }
+}
 
